@@ -1,0 +1,11 @@
+view_chooser_app_only:
+  type: bool
+  default: true
+
+view_ligera_url:
+  type: string
+  default: "/dumb"
+
+view_anonist_url:
+  type: string
+  default: "/discourse-ai/ai-bot/conversations"

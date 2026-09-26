@@ -1,0 +1,23 @@
+es:
+  theme_metadata:
+    description: "Elige cómo se abre la comunidad: ligera (Dumbcourse), moderna (el foro) o anonist (chat IA)."
+    settings:
+      view_chooser_app_only: "Solo en la app instalada (Android o PWA). Desactívalo para mostrarlo también en el navegador."
+      view_ligera_url: "Ruta de la vista ligera (Dumbcourse). Vacía oculta la opción."
+      view_anonist_url: "Ruta de la vista anonist (chat IA). Vacía oculta la opción."
+  view_chooser:
+    title: "Elige tu vista"
+    subtitle: "Puedes cambiarla cuando quieras."
+    continue: "continuar"
+    hint: "[ perfil -> preferencias -> interfaz ]"
+    preference: "Vista al abrir la comunidad"
+    preference_instructions: "Se guarda en este dispositivo y se aplica la próxima vez que abras la comunidad."
+    ligera:
+      name: "ligera"
+      description: "solo texto, rápida y con pocos datos"
+    moderna:
+      name: "moderna"
+      description: "tarjetas, resúmenes IA y todo el foro"
+    anonist:
+      name: "anonist"
+      description: "pregunta y aprende en formato chat"
