@@ -2,7 +2,7 @@ import { tracked } from "@glimmer/tracking";
 import Service from "@ember/service";
 import DiscourseURL from "discourse/lib/url";
 
-// Which view (ligera / moderna / anonist) opens when the community is launched at `/`.
+// Which view (simple / moderna / anonist) opens when the community is launched at `/`.
 // Stored per device, like core's own interface choices: the app is one device, and
 // anonymous visitors have no profile to hold it.
 // ponytail: per-device only; sync through a user field if people ask for it across devices.

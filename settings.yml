@@ -2,7 +2,7 @@ view_chooser_app_only:
   type: bool
   default: true
 
-view_ligera_url:
+view_simple_url:
   type: string
   default: "/dumb"
 

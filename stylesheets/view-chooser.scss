@@ -147,6 +147,7 @@
     min-height: 2.75rem;
     margin-top: var(--space-8);
     border-radius: 0.75rem;
+    color: var(--secondary); // readable on both the light and the dark tertiary
     font-size: var(--font-0);
   }
 
@@ -154,8 +155,9 @@
     margin: var(--space-3) 0 0;
     color: var(--primary-medium);
     font-family: var(--d-font-family--monospace);
-    font-size: var(--font-down-2);
+    font-size: var(--font-down-3);
     text-align: center;
+    white-space: nowrap;
   }
 
   // Preview sketches: six spans, drawn differently per view.
@@ -176,7 +178,7 @@
       background: var(--primary-low);
     }
 
-    &.--ligera {
+    &.--simple {
       grid-template-rows: repeat(6, 0.25rem);
       align-content: center;
 

@@ -4,13 +4,13 @@
 
 [ENGLISH](README.md) | **ESPAÑOL**
 
-Componente de tema de Discourse para que cada persona elija cómo se abre la comunidad: **ligera** (Dumbcourse, solo texto), **moderna** (el foro) o **anonist** (chat IA). Pensado para la [app Android de Criptonautas](https://github.com/somos-criptonautas/comunidad-criptonautas-app), donde muestra «Elige tu vista» a pantalla completa la primera vez que se abre.
+Componente de tema de Discourse para que cada persona elija cómo se abre la comunidad: **simple** (Dumbcourse, solo texto), **moderna** (el foro) o **anonist** (chat IA). Pensado para la [app Android de Criptonautas](https://github.com/somos-criptonautas/comunidad-criptonautas-app), donde muestra «Elige tu vista» a pantalla completa la primera vez que se abre.
 
 ## Requisitos
 
 - Discourse 2026.x.
 - [discourse-phosphor-duotone-icons](https://github.com/somos-criptonautas/discourse-phosphor-duotone-icons) para los iconos de cada opción.
-- Para *ligera*: Dumbcourse activado en [discourse-dumb-nautas](https://github.com/satonotdead/discourse-dumb-nautas).
+- Para *simple*: Dumbcourse activado en [discourse-dumb-nautas](https://github.com/satonotdead/discourse-dumb-nautas).
 - Para *anonist*: Discourse AI con la página de conversaciones del bot activada.
 
 ## Cómo funciona
@@ -25,7 +25,7 @@ Componente de tema de Discourse para que cada persona elija cómo se abre la com
 | Ajuste | Por defecto | Qué hace |
 |---|---|---|
 | `view_chooser_app_only` | `true` | Muestra el selector solo en la app instalada. Desactívalo para mostrarlo también en el navegador. |
-| `view_ligera_url` | `/dumb` | Ruta de la vista *ligera*. Vacía oculta la opción. |
+| `view_simple_url` | `/dumb` | Ruta de la vista *simple*. Vacía oculta la opción. |
 | `view_anonist_url` | `/discourse-ai/ai-bot/conversations` | Ruta de la vista *anonist*. Vacía oculta la opción. |
 
 Los textos se traducen en **Admin → Apariencia → Temas → Homepage Views Nautas → Traducciones** (inglés y español incluidos).

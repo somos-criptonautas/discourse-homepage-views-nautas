@@ -1,19 +1,19 @@
 en:
   theme_metadata:
-    description: "Choose how the community opens: light (Dumbcourse), modern (the forum) or anonist (AI chat)."
+    description: "Choose how the community opens: simple (Dumbcourse), modern (the forum) or anonist (AI chat)."
     settings:
       view_chooser_app_only: "Only in the installed app (Android or PWA). Turn off to show it in the browser too."
-      view_ligera_url: "Path of the light view (Dumbcourse). Empty hides the option."
+      view_simple_url: "Path of the simple view (Dumbcourse). Empty hides the option."
       view_anonist_url: "Path of the anonist view (AI chat). Empty hides the option."
   view_chooser:
     title: "Choose your view"
     subtitle: "You can change it anytime."
     continue: "Continue"
-    hint: "[ profile -> preferences -> interface ]"
+    hint: "[profile -> preferences -> interface]"
     preference: "View when opening the community"
     preference_instructions: "Saved on this device and applied the next time you open the community."
-    ligera:
-      name: "light"
+    simple:
+      name: "simple"
       description: "text only, fast and light on data"
     moderna:
       name: "modern"

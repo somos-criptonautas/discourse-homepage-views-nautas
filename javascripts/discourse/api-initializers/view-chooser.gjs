@@ -4,7 +4,7 @@ import getURL from "discourse/lib/get-url";
 import ViewChooser from "../components/view-chooser";
 import ViewPreference from "../components/view-preference";
 
-// "Elige tu vista": ligera (Dumbcourse), moderna (this forum) or anonist (AI chat).
+// "Elige tu vista": simple (Dumbcourse), moderna (this forum) or anonist (AI chat).
 //
 // Only a launch at `/` is ever redirected, and only once per page load. Notification
 // taps and shared links keep opening their topic, and clicking the logo from the AI
@@ -24,10 +24,10 @@ function launchedFromApp() {
 export default apiInitializer((api) => {
   const viewChoice = api.container.lookup("service:view-choice");
   viewChoice.views = [
-    settings.view_ligera_url && {
-      id: "ligera",
+    settings.view_simple_url && {
+      id: "simple",
       icon: "ph-dt-article",
-      url: settings.view_ligera_url,
+      url: settings.view_simple_url,
       fullLoad: true,
     },
     { id: "moderna", icon: "ph-dt-squares-four", url: "/" },
