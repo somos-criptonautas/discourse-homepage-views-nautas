@@ -71,18 +71,18 @@ export default class ViewChooser extends Component {
 
           <fieldset class="view-chooser__options">
             <legend class="sr-only">{{t "title"}}</legend>
-            {{#each this.options as |view|}}
+            {{#each this.options as |choice|}}
               <label class="view-chooser__option">
                 <input
                   class="view-chooser__radio"
                   type="radio"
                   name="view-chooser"
-                  value={{view.id}}
-                  checked={{eq this.selected view.id}}
-                  {{on "change" (fn this.select view.id)}}
+                  value={{choice.id}}
+                  checked={{eq this.selected choice.id}}
+                  {{on "change" (fn this.select choice.id)}}
                 />
                 <span
-                  class="view-chooser__preview --{{view.id}}"
+                  class="view-chooser__preview --{{choice.id}}"
                   aria-hidden="true"
                 >
                   <span></span><span></span><span></span>
@@ -90,12 +90,12 @@ export default class ViewChooser extends Component {
                 </span>
                 <span class="view-chooser__text">
                   <span class="view-chooser__name">
-                    {{icon view.icon}}
-                    {{view.name}}
+                    {{icon choice.icon}}
+                    {{choice.name}}
                   </span>
                   <span
                     class="view-chooser__description"
-                  >{{view.description}}</span>
+                  >{{choice.description}}</span>
                 </span>
                 <span class="view-chooser__check" aria-hidden="true"></span>
               </label>

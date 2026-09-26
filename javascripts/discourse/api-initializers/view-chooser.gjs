@@ -1,3 +1,4 @@
+import { next } from "@ember/runloop";
 import { apiInitializer } from "discourse/lib/api";
 import getURL from "discourse/lib/get-url";
 import ViewChooser from "../components/view-chooser";
@@ -56,13 +57,10 @@ export default apiInitializer((api) => {
     if (view.fullLoad) {
       viewChoice.go(current); // before Ember renders moderna, so no flash
     } else {
-      let done = false;
-      api.onPageChange(() => {
-        if (!done) {
-          done = true;
-          viewChoice.go(current);
-        }
-      });
+      // Routing from inside the initial transition (e.g. onPageChange) is ignored,
+      // so wait for it to settle and go on the next run loop.
+      const router = api.container.lookup("service:router");
+      router.one("routeDidChange", () => next(() => viewChoice.go(current)));
     }
   }
 });

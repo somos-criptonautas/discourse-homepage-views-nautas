@@ -36,11 +36,11 @@ export default class ViewPreference extends Component {
       </label>
       <div class="controls">
         <select id="view-preference" {{on "change" this.change}}>
-          {{#each this.options as |view|}}
+          {{#each this.options as |choice|}}
             <option
-              value={{view.id}}
-              selected={{eq this.current view.id}}
-            >{{view.name}}</option>
+              value={{choice.id}}
+              selected={{eq this.current choice.id}}
+            >{{choice.name}}</option>
           {{/each}}
         </select>
       </div>
