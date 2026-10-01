@@ -21,6 +21,12 @@ Componente de tema de Discourse para que cada persona elija cómo se abre la com
 - La elección se guarda por dispositivo, como las opciones de interfaz del núcleo. Se cambia en **Preferencias → Interfaz → Vista al abrir la comunidad** o abriendo `/?vista=elegir` (sirve también sin sesión y desde Dumbcourse).
 - Los colores salen de la paleta activa, así que el modo claro y oscuro siguen al sitio. El logo es el logo pequeño del sitio.
 
+## Enlaces a nuestras otras apps
+
+Dentro de la app, los enlaces a los dominios de `app_subdomains` se abren en la misma ventana con `?volver=<página del foro>`, en lugar de una capa de Chrome. Cada uno de esos dominios muestra un pequeño botón redondo que lleva de vuelta a esa misma página del foro; el botón y el `assetlinks.json` del dominio salen de un include de nginx que se instala en el servidor y no forma parte de este repo. Los dominios que no están en la lista (la CDN, auth, cualquiera nuevo) no se tocan nunca, y fuera de la app los enlaces funcionan como siempre.
+
+Incluye solo dominios que controles por completo y que no sirvan archivos subidos por usuarios: dentro de la app se abren a pantalla completa, sin barra de direcciones.
+
 ## Ajustes
 
 | Ajuste | Por defecto | Qué hace |
@@ -28,6 +34,7 @@ Componente de tema de Discourse para que cada persona elija cómo se abre la com
 | `view_chooser_app_only` | `true` | Muestra el selector solo en la app instalada. Desactívalo para mostrarlo también en el navegador. |
 | `view_simple_url` | `/dumb` | Ruta de la vista *simple*. Vacía oculta la opción. |
 | `view_anonist_url` | `/discourse-ai/ai-bot/conversations` | Ruta de la vista *anonist*. Vacía oculta la opción. |
+| `app_subdomains` | nuestros 9 dominios | Dominios que, dentro de la app, se abren en la misma ventana con botón para volver. |
 
 Los textos se traducen en **Admin → Apariencia → Temas → Homepage Views Nautas → Traducciones** (inglés y español incluidos).
 

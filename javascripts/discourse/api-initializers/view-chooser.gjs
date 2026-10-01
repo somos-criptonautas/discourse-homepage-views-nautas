@@ -3,6 +3,7 @@ import { apiInitializer } from "discourse/lib/api";
 import getURL from "discourse/lib/get-url";
 import ViewChooser from "../components/view-chooser";
 import ViewPreference from "../components/view-preference";
+import launchedFromApp from "../lib/launched-from-app";
 
 // "Elige tu vista": simple (Dumbcourse), moderna (this forum) or anonist (AI chat).
 //
@@ -13,13 +14,6 @@ import ViewPreference from "../components/view-preference";
 //
 // `/?vista=elegir` reopens the chooser from anywhere (Dumbcourse, a sidebar link,
 // anonymous visitors who can't reach Preferences).
-
-function launchedFromApp() {
-  return (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    document.referrer.startsWith("android-app://")
-  );
-}
 
 export default apiInitializer((api) => {
   const viewChoice = api.container.lookup("service:view-choice");

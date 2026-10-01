@@ -5,6 +5,7 @@ es:
       view_chooser_app_only: "Solo en la app instalada (Android o PWA). Desactívalo para mostrarlo también en el navegador."
       view_simple_url: "Ruta de la vista simple (Dumbcourse). Vacía oculta la opción."
       view_anonist_url: "Ruta de la vista anonist (chat IA). Vacía oculta la opción."
+      app_subdomains: "Dominios que, dentro de la app, se abren en la misma ventana con un botón para volver al foro (su nginx debe incluir el snippet de la app). No incluyas dominios que sirvan archivos subidos por usuarios o que no controles por completo, como la CDN o auth."
   view_chooser:
     title: "Elige tu vista"
     subtitle: "Puedes cambiarla cuando quieras."

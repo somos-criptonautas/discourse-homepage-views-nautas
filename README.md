@@ -21,6 +21,12 @@ Discourse theme component that lets each person choose how the community opens: 
 - The choice is stored per device, like core's interface options. People change it in **Preferences → Interface → View when opening the community**, or by opening `/?vista=elegir` (also works for anonymous visitors and from Dumbcourse).
 - Colours come from the active palette, so light and dark follow the site. The logo is the site's small logo.
 
+## Links to our other apps
+
+Inside the app, links to the hosts in `app_subdomains` open in the same window with `?volver=<forum page>` added, instead of a Chrome overlay. Each of those hosts shows a small round button that brings people back to that exact forum page; the button and the host's `assetlinks.json` come from an nginx include that is installed on the server and is not part of this repo. Hosts not in the list (the CDN, auth, anything new) are never touched, and outside the app links behave as usual.
+
+Only list hosts you fully control and that don't serve files uploaded by users: inside the app they open full screen, without an address bar.
+
 ## Settings
 
 | Setting | Default | What it does |
@@ -28,6 +34,7 @@ Discourse theme component that lets each person choose how the community opens: 
 | `view_chooser_app_only` | `true` | Show the chooser only in the installed app. Turn off to show it in the browser too. |
 | `view_simple_url` | `/dumb` | Path of the *simple* view. Empty hides the option. |
 | `view_anonist_url` | `/discourse-ai/ai-bot/conversations` | Path of the *anonist* view. Empty hides the option. |
+| `app_subdomains` | our 9 app hosts | Hosts that open in the same window with a way back, inside the app. |
 
 Copy is translatable from **Admin → Appearance → Themes → Homepage Views Nautas → Translations** (English and Spanish included).
 

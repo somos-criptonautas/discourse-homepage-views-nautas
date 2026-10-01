@@ -9,3 +9,8 @@ view_simple_url:
 view_anonist_url:
   type: string
   default: "/discourse-ai/ai-bot/conversations"
+
+app_subdomains:
+  type: list
+  list_type: simple
+  default: "criptonautas.co|blocks.criptonautas.co|videos.criptonautas.co|files.criptonautas.co|calc.criptonautas.co|send.criptonautas.co|search.criptonautas.co|rd.criptonautas.co|wk.criptonautas.co"
