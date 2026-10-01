@@ -9,6 +9,6 @@
   "maximum_discourse_version": null,
   "assets": {},
   "modifiers": {
-    "svg_icons": ["ph-dt-article", "ph-dt-squares-four", "ph-dt-anonist"]
+    "svg_icons": ["ph-dt-article", "ph-dt-squares-four", "ph-dt-anonist", "right-to-bracket"]
   }
 }

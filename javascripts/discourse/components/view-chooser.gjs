@@ -5,6 +5,7 @@ import { on } from "@ember/modifier";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import icon from "discourse/helpers/d-icon";
+import getURL from "discourse/lib/get-url";
 import { i18n } from "discourse-i18n";
 import { eq } from "truth-helpers";
 import { themePrefix } from "virtual:theme";
@@ -55,6 +56,15 @@ export default class ViewChooser extends Component {
     this.picked = id;
   }
 
+  // A full page load of core's /login, so Discourse's own flow decides: straight to
+  // Authentik with auth_immediately, otherwise its login page. Sign-in returns to `/`,
+  // where the chooser opens again for the now logged-in person. One Authentik session
+  // then covers every other app opened from the forum.
+  @action
+  signIn() {
+    window.location.assign(getURL("/login"));
+  }
+
   @action
   submit(event) {
     event.preventDefault();
@@ -90,6 +100,17 @@ export default class ViewChooser extends Component {
               >{{this.subtitle}}</p>
             </div>
           </header>
+
+          {{#unless this.currentUser}}
+            <button
+              type="button"
+              class="btn view-chooser__sign-in"
+              {{on "click" this.signIn}}
+            >
+              {{icon "right-to-bracket"}}
+              {{t "sign_in"}}
+            </button>
+          {{/unless}}
 
           <fieldset class="view-chooser__options">
             <legend class="sr-only">{{t "title"}}</legend>

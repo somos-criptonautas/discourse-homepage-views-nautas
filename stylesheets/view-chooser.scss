@@ -55,6 +55,27 @@
     }
   }
 
+  &__sign-in {
+    width: 100%;
+    min-height: 2.75rem;
+    margin: calc(var(--space-8) * -0.5) 0 var(--space-6);
+    border: 1px solid var(--tertiary);
+    border-radius: 0.75rem;
+    background: transparent;
+    color: var(--tertiary);
+    font-size: var(--font-0);
+
+    .d-icon {
+      color: inherit;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: var(--tertiary-very-low);
+      color: var(--tertiary);
+    }
+  }
+
   &__options {
     display: flex;
     flex-direction: column;

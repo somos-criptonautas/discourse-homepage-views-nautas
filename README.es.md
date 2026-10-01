@@ -16,6 +16,7 @@ Componente de tema de Discourse para que cada persona elija cómo se abre la com
 ## Cómo funciona
 
 - El selector aparece una vez, a pantalla completa, al abrir la comunidad por `/` sin haber elegido todavía. Con `view_chooser_app_only` (por defecto) solo en la app instalada (Android o PWA).
+- Quien no inició sesión ve además un botón «entrar con tu cuenta» sobre las vistas. Abre `/login` del núcleo (directo al login externo con `auth_immediately`) y vuelve al selector con la sesión iniciada. Con un proveedor SSO como Authentik, ese único inicio de sesión sirve también para todas las demás apps enlazadas desde el foro.
 - Desde entonces, abrir por `/` lleva directo a la vista elegida. Solo `/` y una vez por carga: notificaciones, enlaces compartidos y otras páginas (`/latest`, `/custom`) se abren como siempre, y las portadas por grupo solo reciben a quien usa *moderna*.
 - Si la vista elegida no se puede abrir (plugin desactivado, sin acceso, página inexistente), se olvida la elección y el selector vuelve a abrirse con un aviso y esa opción desactivada, así nadie queda atrapado en una vista rota.
 - La elección se guarda por dispositivo, como las opciones de interfaz del núcleo. Se cambia en **Preferencias → Interfaz → Vista al abrir la comunidad** o abriendo `/?vista=elegir` (sirve también sin sesión y desde Dumbcourse).

@@ -16,6 +16,7 @@ Discourse theme component that lets each person choose how the community opens: 
 ## How it works
 
 - The chooser shows once, full screen, when the community is opened at `/` and nothing was chosen yet. With `view_chooser_app_only` (default) only in the installed app (Android or PWA).
+- Logged-out visitors also get a "Sign in with your account" button above the views. It opens core's `/login` (straight to the external login with `auth_immediately`), and they come back to the chooser signed in. With an SSO provider like Authentik, that one sign-in also covers every other app linked from the forum.
 - After that, a launch at `/` goes straight to the chosen view. Only `/`, once per page load: notifications, shared links and other pages (`/latest`, `/custom`) open as usual, and group homepages only ever see *moderna* users.
 - If the chosen view can't open (plugin off, no access, page gone), the choice is forgotten and the chooser opens again with a short notice and that option disabled, so nobody gets stuck on a broken view.
 - The choice is stored per device, like core's interface options. People change it in **Preferences → Interface → View when opening the community**, or by opening `/?vista=elegir` (also works for anonymous visitors and from Dumbcourse).

@@ -11,6 +11,7 @@ en:
     subtitle: "You can change it anytime."
     unavailable: "The %{view} view isn't available right now. Choose another one."
     continue: "Continue"
+    sign_in: "Sign in with your account"
     hint: "[profile -> preferences -> interface]"
     preference: "View when opening the community"
     preference_instructions: "Saved on this device and applied the next time you open the community."

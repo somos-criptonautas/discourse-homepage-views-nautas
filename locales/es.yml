@@ -11,6 +11,7 @@ es:
     subtitle: "Puedes cambiarla cuando quieras."
     unavailable: "La vista %{view} no está disponible ahora. Elige otra."
     continue: "continuar"
+    sign_in: "entrar con tu cuenta"
     hint: "[perfil -> preferencias -> interfaz]"
     preference: "Vista al abrir la comunidad"
     preference_instructions: "Se guarda en este dispositivo y se aplica la próxima vez que abras la comunidad."
