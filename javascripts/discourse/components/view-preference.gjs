@@ -1,15 +1,15 @@
 import Component from "@glimmer/component";
-import { on } from "@ember/modifier";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
 import { i18n } from "discourse-i18n";
-import { eq } from "truth-helpers";
+import ComboBox from "select-kit/components/combo-box";
 import { themePrefix } from "virtual:theme";
 
 const t = (key) => i18n(themePrefix(`view_chooser.${key}`));
 
-// "Vista" select in Preferences → Interface. Saves on change, like core's per-device
-// interface options, and never navigates: the new view applies on the next launch.
+// "Vista" dropdown in Preferences → Interface, using core's ComboBox so it matches the
+// other options on that page. Saves on change, like core's per-device interface
+// options, and never navigates: the new view applies on the next launch.
 export default class ViewPreference extends Component {
   @service viewChoice;
 
@@ -25,24 +25,20 @@ export default class ViewPreference extends Component {
   }
 
   @action
-  change(event) {
-    this.viewChoice.save(event.target.value);
+  change(id) {
+    this.viewChoice.save(id);
   }
 
   <template>
     <div class="control-group view-preference">
-      <label class="control-label" for="view-preference">
-        {{t "preference"}}
-      </label>
+      <label class="control-label">{{t "preference"}}</label>
       <div class="controls">
-        <select id="view-preference" {{on "change" this.change}}>
-          {{#each this.options as |choice|}}
-            <option
-              value={{choice.id}}
-              selected={{eq this.current choice.id}}
-            >{{choice.name}}</option>
-          {{/each}}
-        </select>
+        <ComboBox
+          @content={{this.options}}
+          @value={{this.current}}
+          @onChange={{this.change}}
+          class="view-preference__select"
+        />
       </div>
       <div class="instructions">{{t "preference_instructions"}}</div>
     </div>

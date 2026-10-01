@@ -8,6 +8,7 @@ en:
   view_chooser:
     title: "Choose your view"
     subtitle: "You can change it anytime."
+    unavailable: "The %{view} view isn't available right now. Choose another one."
     continue: "Continue"
     hint: "[profile -> preferences -> interface]"
     preference: "View when opening the community"

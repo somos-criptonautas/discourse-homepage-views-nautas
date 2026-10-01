@@ -19,7 +19,22 @@ export default class ViewChooser extends Component {
   @service siteSettings;
   @service currentUser;
 
-  @tracked selected = this.viewChoice.current || "moderna";
+  @tracked picked = null;
+
+  // Follows the stored view until the person picks one, so a view that failed and
+  // was forgotten falls back to moderna instead of staying selected.
+  get selected() {
+    return this.picked ?? (this.viewChoice.current || "moderna");
+  }
+
+  get subtitle() {
+    const failed = this.viewChoice.failed;
+    return failed
+      ? i18n(themePrefix("view_chooser.unavailable"), {
+          view: t(`${failed}.name`),
+        })
+      : t("subtitle");
+  }
 
   get options() {
     return this.viewChoice.views.map((view) => ({
@@ -37,15 +52,18 @@ export default class ViewChooser extends Component {
 
   @action
   select(id) {
-    this.selected = id;
+    this.picked = id;
   }
 
   @action
   submit(event) {
     event.preventDefault();
-    this.viewChoice.save(this.selected);
+    const id = this.selected;
+    this.viewChoice.save(id);
     this.viewChoice.chooserOpen = false;
-    this.viewChoice.go(this.selected);
+    this.viewChoice.failed = null;
+    this.picked = null;
+    this.viewChoice.go(id);
   }
 
   <template>
@@ -65,7 +83,11 @@ export default class ViewChooser extends Component {
               <h1 id="view-chooser-title" class="view-chooser__title">
                 {{t "title"}}
               </h1>
-              <p class="view-chooser__subtitle">{{t "subtitle"}}</p>
+              <p
+                class="view-chooser__subtitle
+                  {{if this.viewChoice.failed '--unavailable'}}"
+                role={{if this.viewChoice.failed "alert"}}
+              >{{this.subtitle}}</p>
             </div>
           </header>
 
@@ -79,6 +101,7 @@ export default class ViewChooser extends Component {
                   name="view-chooser"
                   value={{choice.id}}
                   checked={{eq this.selected choice.id}}
+                  disabled={{eq this.viewChoice.failed choice.id}}
                   {{on "change" (fn this.select choice.id)}}
                 />
                 <span

@@ -49,6 +49,10 @@
     margin: var(--space-1) 0 0;
     color: var(--primary-medium);
     font-size: var(--font-down-1);
+
+    &.--unavailable {
+      color: var(--danger);
+    }
   }
 
   &__options {
@@ -77,6 +81,11 @@
       border-color: var(--tertiary);
       box-shadow: inset 0 0 0 0.5px var(--tertiary);
       background: var(--tertiary-very-low);
+    }
+
+    &:has(.view-chooser__radio:disabled) {
+      opacity: 0.5;
+      cursor: not-allowed;
     }
 
     &:has(.view-chooser__radio:focus-visible) {
@@ -239,4 +248,8 @@ html:has(.view-chooser) {
     opacity: 0;
     transform: translateY(0.5rem);
   }
+}
+
+.view-preference__select {
+  min-width: 12rem;
 }

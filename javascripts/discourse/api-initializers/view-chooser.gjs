@@ -55,7 +55,7 @@ export default apiInitializer((api) => {
   } else if (atHome && current !== "moderna") {
     const view = viewChoice.viewFor(current);
     if (view.fullLoad) {
-      viewChoice.go(current); // before Ember renders moderna, so no flash
+      viewChoice.go(current); // starts right away; Ember views wait for routing below
     } else {
       // Routing from inside the initial transition (e.g. onPageChange) is ignored,
       // so wait for it to settle and go on the next run loop.
