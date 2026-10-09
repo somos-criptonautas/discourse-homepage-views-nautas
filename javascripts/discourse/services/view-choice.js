@@ -6,7 +6,7 @@ import DiscourseURL from "discourse/lib/url";
 // Which view (simple / moderna / anonist) opens when the community is launched at `/`.
 // Stored per device, like core's own interface choices: the app is one device, and
 // anonymous visitors have no profile to hold it.
-// ponytail: per-device only; sync through a user field if people ask for it across devices.
+// Per-device only; sync through a user field if people ask for it across devices.
 const KEY = "horizonView";
 
 // Discourse's own "not found" / "no access" pages.
