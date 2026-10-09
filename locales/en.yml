@@ -1,9 +1,9 @@
 en:
   theme_metadata:
-    description: "Choose how the community opens: simple (Dumbcourse), modern (the forum) or anonist (AI chat)."
+    description: "Choose how the community opens: minimal (Dumbcourse), normal (the forum) or anonist (AI chat)."
     settings:
       view_chooser_app_only: "Only in the installed app (Android or PWA). Turn off to show it in the browser too."
-      view_simple_url: "Path of the simple view (Dumbcourse). Empty hides the option."
+      view_simple_url: "Path of the minimal view (Dumbcourse). Empty hides the option."
       view_anonist_url: "Path of the anonist view (AI chat). Empty hides the option."
       app_subdomains: "Hosts that, inside the app, open in the same window with a way back to the forum (their nginx must include the app snippet). Never list hosts that serve user uploads or that you don't fully control, such as the CDN or auth."
   view_chooser:
@@ -16,10 +16,10 @@ en:
     preference: "View when opening the community"
     preference_instructions: "Saved on this device and applied the next time you open the community."
     simple:
-      name: "simple"
+      name: "minimal"
       description: "text only, fast and light on data"
     moderna:
-      name: "modern"
+      name: "normal"
       description: "cards, AI summaries and the whole forum"
     anonist:
       name: "anonist"
