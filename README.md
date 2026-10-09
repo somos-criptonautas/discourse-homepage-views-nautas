@@ -4,6 +4,8 @@
 
 **ENGLISH** | [ESPAÑOL](README.es.md)
 
+Maintained by Criptonautas. Not affiliated with or endorsed by Discourse (Civilized Discourse Construction Kit, Inc.).
+
 Discourse theme component that lets each person choose how the community opens: **simple** (Dumbcourse, text only), **moderna** (the forum) or **anonist** (AI chat). Built for the [Criptonautas Android app](https://github.com/somos-criptonautas/comunidad-criptonautas-app), where it shows a full-screen "Elige tu vista" on first launch.
 
 ## Requirements

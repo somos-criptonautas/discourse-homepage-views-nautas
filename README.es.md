@@ -4,6 +4,8 @@
 
 [ENGLISH](README.md) | **ESPAÑOL**
 
+Mantenido por Criptonautas. Sin afiliación ni respaldo de Discourse (Civilized Discourse Construction Kit, Inc.).
+
 Componente de tema de Discourse para que cada persona elija cómo se abre la comunidad: **simple** (Dumbcourse, solo texto), **moderna** (el foro) o **anonist** (chat IA). Pensado para la [app Android de Criptonautas](https://github.com/somos-criptonautas/comunidad-criptonautas-app), donde muestra «Elige tu vista» a pantalla completa la primera vez que se abre.
 
 ## Requisitos
